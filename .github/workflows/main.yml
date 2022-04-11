@@ -1,0 +1,13 @@
+on:
+  pull_request:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        message: [foo, bar, baz]
+    steps:
+      - name: Print env
+        run: env
