@@ -10,4 +10,6 @@ jobs:
         message: [foo, bar, baz]
     steps:
       - name: Print env
+        env:
+          CORRELATOR: ${{ join([env.GITHUB_JOB, matrix.message], '_') }}
         run: env
